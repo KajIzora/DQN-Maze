@@ -138,14 +138,3 @@ python scripts/evaluation/run_replay.py --gui \
 ## VS Code
 
 `.vscode/launch.json` includes debug configurations for training, evaluation, and manual control.
-
-## Push to GitHub
-
-```bash
-git add .
-git commit -m "Initial commit: maze Q-learning with PyBullet"
-git remote add origin https://github.com/YOUR_USERNAME/maze-q-learn-paralell.git
-git push -u origin main
-```
-
-Replace the remote URL with your repository. After cloning elsewhere, run `pip install -r requirements.txt`, `pip install -e . --no-deps`, and the training scripts to generate `.pkl` checkpoints locally.
