@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "maze-rl"
+version = "0.1.0"
+description = "Q-learning and DQN for a PyBullet maze navigation task"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.20.0,<2.0.0",
+    "pybullet>=3.2.0",
+    "torch>=2.0.0",
+    "tqdm>=4.60.0",
+    "matplotlib>=3.3.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

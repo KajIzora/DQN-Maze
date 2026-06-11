@@ -1,0 +1,115 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Run Manual Control",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/run_manual.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": ["--gui"]
+        },
+        {
+            "name": "Run DQN Training",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/training/run_dqn.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": ["--gui", "--save-model", "models/dqn/dqn.pkl", "--checkpoint-every", "100"]
+        },
+        {
+            "name": "Run Q-Tabular Training",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/training/run_q_tabular.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": ["--gui", "--save-model", "models/tabular/q-tabular.pkl", "--checkpoint-every", "100"]
+        },
+        {
+            "name": "Run Q-Tabular Training easy mode",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/training/run_q_tabular.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": ["--save-model", "models/tabular/q-tabular.pkl", "--checkpoint-every", "100", "--forward-distance", "0.15", "--episodes", "500", "--max-steps", "1000", "--tabular-ray-stop-tol", "0.05"]
+        },
+        {
+            "name": "Run Q-Tabular Training no GUI",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/training/run_q_tabular.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": ["--save-model", "models/tabular/q-tabular.pkl", "--checkpoint-every", "1"]
+        },
+        {
+            "name": "Run Q-Tabular Parallel Training",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/training/run_q_tabular_parallel.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": ["--save-model", "models/tabular/q-tabular-parallel.pkl", "--checkpoint-every", "100"]
+        },
+        {
+            "name": "Run Q-Tabular Parallel Training easy mode",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/training/run_q_tabular_parallel.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": ["--save-model", "models/tabular/q-tabular.pkl", "--checkpoint-every", "100", "--forward-distance", "0.15", "--episodes", "500", "--max-steps", "1000", "--tabular-ray-stop-tol", "0.05"]
+        },
+        {
+            "name": "Run Random Policy",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/run_random.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": ["--gui", "--demo-steps", "2000"]
+        },
+        {
+            "name": "Run Trained Model",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/evaluation/run_trained_model.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": ["--gui", "--episodes", "10", "--max-steps", "1000", "--model", "models/tabular/q-tabular-parallel.pkl"]
+        },
+        {
+            "name": "Run Trained DQN Model",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/evaluation/run_trained_dqn.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": ["--gui", "--episodes", "10", "--max-steps", "1000", "--model", "models/dqn/dqn.pkl"]
+        },
+        {
+            "name": "Run Trained Model Replay",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/evaluation/run_replay.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": ["--gui", "--actions", "models/tabular/actions.json", "--episode", "4"]
+        }
+    ]
+}
